@@ -1,0 +1,12 @@
+<h2>Project <a href="#/project/new">New</a></h2>
+
+<div ng-show="items.length == 0">
+	<hr/>
+	<p>Create new project</p>
+</div>
+
+<table border="1">
+	<tr ng-repeat="item in items">
+		<td><a href="#/project/{{item.id}}">{{item.name}}</a></td>
+	</tr>
+</table>

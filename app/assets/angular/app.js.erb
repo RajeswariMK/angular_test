@@ -1,0 +1,9 @@
+'use strict';
+
+angular.module('app', ['ngResource']).config(['$routeProvider', function($routeProvider, $locationProvider) {
+	$routeProvider
+		.when('/', {controller: 'ProjectIndexController', templateUrl: '<%= asset_path('templates/index.html') %>'} )
+		.when('/project/new', {controller: 'ProjectCreateController', templateUrl: '<%= asset_path('templates/new.html') %>'})
+		.when('/project/:id', {controller: 'ProjectShowController', templateUrl: '<%= asset_path('templates/show.html') %>'})
+		.otherwise({redirectTo: '/'});
+}]);

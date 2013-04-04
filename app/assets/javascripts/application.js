@@ -11,5 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require angular.min
+//= require angular-resource-1.0.3.min
+//= require ../angular/app.js
+//= require_tree ../angular

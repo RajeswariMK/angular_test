@@ -1,0 +1,16 @@
+<h2>Project: {{project.name}}</h2>
+<hr />
+<div ng-controller="TasksController">
+<div ng-repeat="task in tasks">
+	<input type="checkbox" ng-model="task.complete" ng-click="updateTask($event, task.id)" />
+	{{task.name}}
+</div>
+
+<hr />
+
+<form ng-submit="save()">
+	<input type="text" ng-model="name" placeholder="Enter Task" />
+	<div ng-repeat="error in errors.name"><strong>Name</strong> {{error}}</div>
+	<button type="submit">Add Task</button>
+</form>
+</div>

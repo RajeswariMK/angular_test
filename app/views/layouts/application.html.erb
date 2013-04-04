@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE>
+<html ng-app="app">
 <head>
   <title>ProjectManagemant</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= yield %>
-
+<%#= yield %>
+<div class="container">
+	<div ng-view></div>
+</div>
 </body>
 </html>
