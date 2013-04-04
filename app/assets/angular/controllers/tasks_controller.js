@@ -20,16 +20,14 @@ app.controller('TasksController', function($scope, Task, $routeParams) {
 
 	$scope.updateTask = function($event, t_id) {
 		var checkbox = $event.target;
-		console.log("-----------------------------" + checkbox);
   		var action = (checkbox.checked ? true : false);
-		console.log("-----" + action + "hdfhgdhdh" + t_id);
 		var data = {project_id: $routeParams.id, complete: action};
-		// Task.update({id: t_id}, data, function(resource) {
-  //     		console.log(resource);
-  //   	}, function(response) {
-  //     		console.log(response);
-  //   	});
-		$scope.task = Task.get({id: t_id})
+		Task.get({projectId: $routeParams.id, id: t_id}, function(resource) {
+	      var task = resource;
+	      task.complete = action;
+	      task.$update({projectId: $routeParams.id});
+	    }, function(response) {
+	    });
 
 	}
 });
