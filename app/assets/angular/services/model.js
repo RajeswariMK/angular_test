@@ -2,7 +2,7 @@
 
 var app = angular.module('app');
 app.factory('Project', function($resource) {
-	return $resource('/projects/:id', {id: '@id'});
+	return $resource('/projects/:id', {id: '@id'}, {update: { method: 'PUT'}});
 
 });
 

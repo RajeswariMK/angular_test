@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require angular.min
+//= require bootstrap.min
+//= require bootstrap-collapse
 //= require angular-resource-1.0.3.min
 //= require ../angular/app.js
 //= require_tree ../angular

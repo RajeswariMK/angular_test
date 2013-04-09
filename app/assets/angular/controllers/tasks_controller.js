@@ -5,6 +5,8 @@ var app = angular.module('app');
 app.controller('TasksController', function($scope, Task, $routeParams) {
 	$scope.tasks = Task.query({projectId: $routeParams.id});
 
+	$scope.completed_tasks = Task.query({projectId: $routeParams.id, complete: true});
+	// $scope.uncompleted_tasks = Task.query({projectId: $routeParams.id, complete: false});	
 	$scope.save = function() {
 		console.log($scope);
 		var obj = new Task({name: $scope.name, projectId: $routeParams.id});
@@ -29,6 +31,15 @@ app.controller('TasksController', function($scope, Task, $routeParams) {
 	    }, function(response) {
 	    });
 
+	}
+
+	$scope.updateTaskDiv = function() {
+		var all_tasks = $scope.tasks;
+		$scope.completed_tasks = [];
+		angular.forEach(all_tasks, function(task) {
+
+			if(task.complete) $scope.completed_tasks.push(task);
+		});
 	}
 });
 

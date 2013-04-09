@@ -4,9 +4,8 @@
 	<hr/>
 	<p>Create new project</p>
 </div>
-
-<table border="1">
-	<tr ng-repeat="item in items">
-		<td><a href="#/project/{{item.id}}">{{item.name}}</a></td>
-	</tr>
-</table>
+<div class="row">
+    <div class="span3" ng-repeat="item in items">
+		<a href="#/project/{{item.id}}">{{item.name}}</a> |   <a href="#/project/{{item.id}}/edit">Edit Project</a>
+	</div>
+</div>

@@ -2,10 +2,16 @@
 <hr />
 <div ng-controller="TasksController">
 <div ng-repeat="task in tasks">
-	<input type="checkbox" ng-model="task.complete" ng-click="updateTask($event, task.id)" />
+	<input type="checkbox" ng-model="task.complete" ng-change="updateTaskDiv()" />
 	{{task.name}}
 </div>
 
+<hr />
+<h2>Completed Tasks</h2>
+
+<div ng-repeat="task in completed_tasks">
+	{{task.name}}
+</div>
 <hr />
 
 <form ng-submit="save()">
